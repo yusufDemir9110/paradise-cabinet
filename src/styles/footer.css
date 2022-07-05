@@ -1,0 +1,71 @@
+footer{
+    
+    padding: 48px 24px 6px 24px;
+    background-color: var(--color-backgroundGrey);
+}
+.footerTop{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.formContainer{
+    
+
+    color:var(--color-textGrey);
+    
+}
+.formContainer button{
+    border:1px solid var(--color-lineGrey);
+    background-color: var(--color-lineGrey);
+    padding: 6px;
+    color: white;
+    border-radius: 6px;
+}
+.formContainer h1, .sendButton{
+    text-align: center;
+}
+.sendButton{
+    margin-top:1rem ;
+}
+.formContainer h1{
+    margin-bottom: 3rem;
+}
+
+.formItems div{
+    margin: 2rem 0;
+    font-size:1.3rem;
+    
+}
+.formItems input:not(input[type=file]), textarea{
+    margin: 0 16px;
+    border: none;
+    border-bottom: 2px solid var(--color-lineGrey);
+    height:1.5rem;
+    
+    background:none;
+    outline: none;
+    font-size: 1.3rem;
+    padding:4px;
+}
+
+textarea{
+    resize:none;
+}
+
+
+.formItems input::placeholder{
+   font-size: 1.3rem;
+    
+}
+.formItems input[type=url] {
+    display: none;
+    
+}
+form{
+    display: inline;
+    margin: 0 16px;
+}
+.footerBottom{
+    display: flex;
+    justify-content: center;
+}

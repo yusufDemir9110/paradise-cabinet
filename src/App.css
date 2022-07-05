@@ -1,0 +1,16 @@
+:root{
+  --color-textGrey:#313131;
+  --color-lineGrey:#6f6f6f;
+  --color-backgroundGrey:#f2f2f2;
+}
+
+body{
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+}
+
+h3{
+  margin:0 1rem;
+}
+

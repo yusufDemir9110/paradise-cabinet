@@ -1,0 +1,57 @@
+.spaceBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header{
+    background-color:var(--color-backgroundGrey);
+    padding:6px 24px;
+    
+}
+.headerLogo{
+    width:50px;
+}
+.faPhone{
+    height: 20px;
+    margin-right: 12px;
+    color: var(--color-textGrey);
+}
+header a{
+    color:var(--color-textGrey);
+    text-decoration: none;
+    font-size: 20px;
+    padding:3px 12px;
+    border:2px solid #cccccc;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s ease-in;
+}
+header a:hover{
+    border-color:var(--color-textGrey);
+}
+nav{
+   
+    padding: 0 24px;
+}
+.navLogo{
+    height:50px;   
+}
+.navRight ul {
+    display: flex;
+}
+
+.navRight ul li {
+    list-style: none;
+    margin-left: 12px;
+}
+.navRight a{
+    color:var(--color-textGrey);
+    text-decoration: none;
+    border-bottom:2px solid white;
+    transition: all 0.2s ease-in;
+}
+.navRight a:hover {
+    border-bottom-color:green;
+}
+
