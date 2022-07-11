@@ -1,46 +1,49 @@
 import React from "react";
 import logo from "../assets/logo.png";
 import paradiseLogo from "../assets/paradiseLogo.png";
+import whatsappLogo from "../assets/whatsapp.png";
 import styles from "../styles/header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
   return (
-    <div>
-      <header className="spaceBetween">
-        <div className="headerLeft">
-          <img src={logo} className="headerLogo" />
-        </div>
-        <div className="headerRight">
+    <header className="spaceBetween">
+      <div className="headerLeft">
+        <img className="headerLogo" src={paradiseLogo} alt="paradiseLogo" />
+      </div>
+      <div className="headerRight">
+        <div className="headerTopRight">
+          <a href="mailto:paradisecabinetca@gmail.com">
+            <FontAwesomeIcon className="faEnvelope" icon={faEnvelope} />
+          </a>
           <a href="tel:+15307333667">
             <FontAwesomeIcon className="faPhone" icon={faPhone} />
             <span>530 733 3667</span>
           </a>
+          <a href="https://api.whatsapp.com/send?phone=15307333667">
+            <img className="whatsappLogo" src={whatsappLogo} alt="" />
+          </a>
         </div>
-      </header>
-      <nav className="spaceBetween">
-        <div className="navLeft">
-          <img src={paradiseLogo} className="navLogo" />
-        </div>
-        <div className="navRight">
+
+        <nav>
           <ul>
             <li>
-              <a href=""> ABOUT</a>
+              <a href="#aboutContainer"> About</a>
             </li>
             <li>
-              <a href=""> CABINETS</a>
+              <a href="#cabinetContainer"> Cabinets</a>
             </li>
             <li>
-              <a href=""> PROCESS</a>
+              <a href="#processContainer"> Process</a>
             </li>
             <li>
-              <a href=""> CONTACT US</a>
+              <a href="#formContainer"> Contact Us</a>
             </li>
           </ul>
-        </div>
-      </nav>
-    </div>
+        </nav>
+      </div>
+    </header>
   );
 }
 

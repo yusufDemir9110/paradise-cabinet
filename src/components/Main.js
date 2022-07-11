@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import db from "../firebase/firebase";
+import { Link } from "react-router-dom";
+import { collection, onSnapshot } from "firebase/firestore";
 import styles from "../styles/main.css";
-import images from "../data/slideData";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import paradiseLogo from "../assets/paradiseLogo.png";
-import products from "../data/productData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAddressBook,
@@ -28,23 +29,71 @@ function Main() {
     initialSlide: 2,
     previousBtn: false,
   };
+  const settings2 = {
+    className: "center",
+    centerMode: true,
+    slidesToShow: 1,
+    Infinite: true,
+    dots: true,
+    speed: 500,
+    initialSlide: 2,
+    previousBtn: false,
+  };
+  const [slides, setSlides] = useState([]);
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    onSnapshot(collection(db, "slides-data"), (snapshot) =>
+      setSlides(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      )
+    );
+    onSnapshot(collection(db, "products-data"), (snapshot) =>
+      setProducts(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      )
+    );
+  }, []);
+
   return (
     <main>
       <article>
-        <div className="textContainer">
-          <h1>Best choise for your kitchens</h1>
+        <div className="sliderOne">
+          <Slider {...settings}>
+            {slides.map(({ data, id }) => (
+              <div key={id}>
+                <img
+                  className="slideImages"
+                  src={data.image}
+                  alt={data.altText}
+                />
+              </div>
+            ))}
+          </Slider>
         </div>
-        <Slider className="slider" {...settings}>
-          {images.map((item) => (
-            <div key={item.id}>
-              <img className="slideImages" src={item.src} alt={item.alt} />
-            </div>
-          ))}
-        </Slider>
+        <div className="sliderTwo">
+          <Slider {...settings2}>
+            {slides.map(({ data, id }) => (
+              <div key={id}>
+                <img
+                  className="slideImages"
+                  src={data.image}
+                  alt={data.altText}
+                />
+              </div>
+            ))}
+          </Slider>
+        </div>
       </article>
-      <section>
+      <section className="aboutContainer" id="aboutContainer">
         <div className="about">
-          <h2>About us</h2>
+          <h1>About Us</h1>
+          <hr />
           <p>
             Paradise Cabinet is a subsidiary company of MFY Construction. Lorem
             ipsum dolor sit amet consectetur adipisicing elit. Totam quaerat
@@ -56,47 +105,52 @@ function Main() {
           <img src={paradiseLogo} alt="" />
         </div>
       </section>
-      <article>
+      <article className="cabinetContainer" id="cabinetContainer">
         <h1>Cabinets</h1>
+        <hr />
         <div className="topicCont">
-          {products.map((item) => (
+          {products.map(({ id, data }) => (
             <div
-              key={item.id}
+              key={id}
               className="topic"
-              style={{ backgroundImage: "url(" + item.image + ")" }}
+              style={{ backgroundImage: "url(" + data.image + ")" }}
             >
-              <div className="topic_name">{item.productName}</div>
+              <div className="topic_name">{data.name}</div>
               <div className="topic_desc_bg">
                 <div>
                   <div className="topic_desc" id="topic_desc_1">
-                    &gt; {item.description1}
+                    &gt; {data.description1}
                   </div>
                   <div className="topic_desc" id="topic_desc_2">
-                    &gt; {item.description2}
+                    &gt; {data.description2}
                   </div>
                   <div className="topic_desc" id="topic_desc_3">
-                    &gt; {item.description3}
+                    &gt; {data.description3}
                   </div>
                   <div className="topic_desc" id="topic_desc_4">
-                    &gt; {item.description4}
+                    &gt; {data.description4}
                   </div>
                 </div>
 
                 <div className="topic_desc" id="topic_desc_5">
-                  <a>
-                    <button className="buttonTop">Detail</button>
-                  </a>
+                  <Link to={"/productDetail"} state={{ state: data.name }}>
+                    <button className="buttonTop">Lesson</button>
+                  </Link>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </article>
-      <section className="progressContainer">
-        <h1>Progress</h1>
-        <div className="progressAnimation">
+      <section className="processContainer" id="processContainer">
+        <h1>Process</h1>
+        <hr />
+        <div className="processAnimation">
           <div className="aniItemRight">
-            <FontAwesomeIcon className="aniItemIcon" icon={faAddressBook} />
+            <div className="aniItemIconContainer">
+              <FontAwesomeIcon className="aniItemIcon" icon={faAddressBook} />
+            </div>
+
             <FontAwesomeIcon
               className="faEllipsisVertical"
               icon={faEllipsisVertical}
@@ -104,7 +158,9 @@ function Main() {
             <h3>Contact</h3>
           </div>
           <div className="aniItemLeft">
-            <FontAwesomeIcon className="aniItemIcon" icon={faPenRuler} />
+            <div className="aniItemIconContainer blue">
+              <FontAwesomeIcon className="aniItemIconBlue" icon={faPenRuler} />
+            </div>
             <FontAwesomeIcon
               className="faEllipsisVertical"
               icon={faEllipsisVertical}
@@ -112,7 +168,12 @@ function Main() {
             <h3>Design</h3>
           </div>
           <div className="aniItemRight">
-            <FontAwesomeIcon className="aniItemIcon" icon={faCalendarDays} />
+            <div className="aniItemIconContainer orange">
+              <FontAwesomeIcon
+                className="aniItemIconOrange"
+                icon={faCalendarDays}
+              />
+            </div>
             <FontAwesomeIcon
               className="faEllipsisVertical"
               icon={faEllipsisVertical}
@@ -120,7 +181,9 @@ function Main() {
             <h3>Schedule</h3>
           </div>
           <div className="aniItemLeft">
-            <FontAwesomeIcon className="aniItemIcon" icon={faTruck} />
+            <div className="aniItemIconContainer">
+              <FontAwesomeIcon className="aniItemIcon" icon={faTruck} />
+            </div>
             <FontAwesomeIcon
               className="faEllipsisVertical"
               icon={faEllipsisVertical}
@@ -128,7 +191,12 @@ function Main() {
             <h3>Delivery</h3>
           </div>
           <div className="aniItemRight">
-            <FontAwesomeIcon className="aniItemIcon" icon={faPuzzlePiece} />
+            <div className="aniItemIconContainer blue">
+              <FontAwesomeIcon
+                className="aniItemIconBlue"
+                icon={faPuzzlePiece}
+              />
+            </div>
             <FontAwesomeIcon
               className="faEllipsisVertical"
               icon={faEllipsisVertical}
@@ -136,7 +204,12 @@ function Main() {
             <h3>Installation</h3>
           </div>
           <div className="aniItemLeft">
-            <FontAwesomeIcon className="aniItemIcon" icon={faFlagCheckered} />
+            <div className="aniItemIconContainer orange">
+              <FontAwesomeIcon
+                className="aniItemIconOrange"
+                icon={faFlagCheckered}
+              />
+            </div>
             <FontAwesomeIcon
               className="faEllipsisVertical"
               icon={faEllipsisVertical}

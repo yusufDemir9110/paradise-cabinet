@@ -13,7 +13,7 @@ function Contact() {
     messageText: "",
     image: "",
   });
-  const [checked, setChecked] = useState(false);
+
   const [disabled, setDisabled] = useState(true);
   const [progres, setProgres] = useState(0);
   const [imageUrl, setImageUrl] = useState("");
@@ -22,7 +22,7 @@ function Contact() {
     message[e.target.id] = e.target.value;
     setMessage({ ...message, message });
 
-    if (message.name !== "" && message.phone !== "" && checked === true) {
+    if (message.name !== "" && message.phone !== "") {
       setDisabled(false);
     } else {
       setDisabled(true);
@@ -71,62 +71,56 @@ function Contact() {
       messageText: "",
       image: "",
     });
-    setChecked(false);
+
     setImageUrl("");
     setDisabled(true);
     setProgres(0);
   };
 
   return (
-    <div className="formContainer">
+    <div className="formContainer" id="formContainer">
       <h1>Contact Us</h1>
-
+      <hr />
       <div className="formItems">
         <div>
           <label htmlFor="name">
-            Name*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input
               required
               type="text"
               id="name"
               value={message.name}
               onChange={handleChange}
-              placeholder="Full Name"
+              placeholder="Full Name*"
             ></input>
           </label>
         </div>
         <div>
           <label htmlFor="topic">
-            Phone Number*
             <input
               required
               type="tel"
               id="phone"
               value={message.phone}
               onChange={handleChange}
-              placeholder="+95____________"
+              placeholder="Phone Number*"
             ></input>
           </label>
         </div>
 
         <div>
           <label htmlFor="email">
-            E-mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input
               required
               type="email"
               id="email"
               value={message.email}
               onChange={handleChange}
-              placeholder="____@________"
+              placeholder="E-mail"
             ></input>
           </label>
         </div>
         <div>
           <label htmlFor="messageText">
-            Message&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
             <textarea
               className="textAreaArea"
               required
@@ -138,12 +132,16 @@ function Contact() {
             ></textarea>
           </label>
         </div>
-        <div>
+        <div className="uploadContainer">
           <label htmlFor="imageForm">
-            Image&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <form id="imageForm" onSubmit={imageHandler}>
-              <input id="file" type="file"></input>
-              <button type="submit">Upload</button>
+              <div className="doubleButton">
+                <input id="unvisibleButton" type="file"></input>
+                <button id="chooseImage">Choose Image</button>
+              </div>
+              <button type="submit" id="uploadImage">
+                Upload Image
+              </button>
             </form>
           </label>
           {progres === 0 ? <p></p> : <p>Uploaded {progres} %</p>}
@@ -158,15 +156,12 @@ function Contact() {
               onChange={handleChange}
             ></input>
           </label>
-          {progres === 100 ? <p>Your image has been uploaded</p> : <p></p>}
         </div>
       </div>
       <div className="policy">
-        <input type="checkbox" onChange={handleChange} checked={checked} />
-        <span>
-          I accept&nbsp;
-          <Link to="/privacy">Privacy Policy</Link>
-        </span>
+        I confirm that I have read&nbsp;
+        <Link to="/privacy">Privacy Policy</Link>&nbsp;and I agree to the use of
+        my data in line therewith.
       </div>
       <div className="sendButton">
         <button disabled={disabled} onClick={add}>
