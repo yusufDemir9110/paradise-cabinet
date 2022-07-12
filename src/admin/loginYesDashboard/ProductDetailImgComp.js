@@ -16,8 +16,11 @@ function ProductDetailImgComp() {
   function handleChange(e) {
     productImg[e.target.id] = e.target.value;
     setProductImg({ ...productImg, productImg });
-
-    if (productImg.id !== "" && productImg.image !== "") {
+    if (
+      productImg.id !== "" &&
+      productImg.productName !== "" &&
+      imageUrl !== ""
+    ) {
       setDisabled(false);
     } else {
       setDisabled(true);
@@ -97,12 +100,12 @@ function ProductDetailImgComp() {
             </label>
           </div>
           <div>
-            <label for="topic">
+            <label for="productName">
               Product Name
               <input
                 required
                 type="text"
-                id="topic"
+                id="productName"
                 value={productImg.productName}
                 onChange={handleChange}
                 placeholder="Write exactly"

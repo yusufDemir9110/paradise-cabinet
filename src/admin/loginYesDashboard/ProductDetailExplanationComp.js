@@ -38,16 +38,16 @@ function ProductDetailExplanationComp() {
     await setDoc(
       doc(db, "product-detail-features-" + newProduct, productFeature.id),
       {
-        door: "",
-        doorStyle: "",
-        finish: "",
-        faceFrame: "",
-        drawerFront: "",
-        boxMaterial: "",
-        shelves: "",
-        drawerBox: "",
-        drawerGlides: "",
-        hinges: "",
+        door: productFeature.door,
+        doorStyle: productFeature.doorStyle,
+        finish: productFeature.finish,
+        faceFrame: productFeature.faceFrame,
+        drawerFront: productFeature.drawerFront,
+        boxMaterial: productFeature.boxMaterial,
+        shelves: productFeature.shelves,
+        drawerBox: productFeature.drawerBox,
+        drawerGlides: productFeature.drawerGlides,
+        hinges: productFeature.hinges,
       }
     );
 
@@ -88,12 +88,12 @@ function ProductDetailExplanationComp() {
             </label>
           </div>
           <div>
-            <label for="topic">
+            <label for="productName">
               Product Name
               <input
                 required
                 type="text"
-                id="topic"
+                id="productName"
                 value={productFeature.productName}
                 onChange={handleChange}
                 placeholder="Write exactly"
@@ -103,12 +103,12 @@ function ProductDetailExplanationComp() {
         </div>
         <div>
           <div>
-            <label for="topic">
+            <label for="door">
               Door
               <input
                 required
                 type="text"
-                id="topic"
+                id="door"
                 value={productFeature.door}
                 onChange={handleChange}
                 placeholder="Write exactly"
@@ -116,12 +116,12 @@ function ProductDetailExplanationComp() {
             </label>
           </div>
           <div>
-            <label for="topic">
+            <label for="doorStyle">
               Door Style
               <input
                 required
                 type="text"
-                id="topic"
+                id="doorStyle"
                 value={productFeature.doorStyle}
                 onChange={handleChange}
                 placeholder="Write exactly"
@@ -129,12 +129,12 @@ function ProductDetailExplanationComp() {
             </label>
           </div>
           <div>
-            <label for="topic">
+            <label for="finish">
               Finish
               <input
                 required
                 type="text"
-                id="topic"
+                id="finish"
                 value={productFeature.finish}
                 onChange={handleChange}
                 placeholder="Write exactly"
@@ -142,12 +142,12 @@ function ProductDetailExplanationComp() {
             </label>
           </div>
           <div>
-            <label for="topic">
+            <label for="faceFrame">
               Face Frame
               <input
                 required
                 type="text"
-                id="topic"
+                id="faceFrame"
                 value={productFeature.faceFrame}
                 onChange={handleChange}
                 placeholder="Write exactly"
@@ -155,25 +155,25 @@ function ProductDetailExplanationComp() {
             </label>
           </div>
           <div>
-            <label for="topic">
+            <label for="drawerFront">
               Drawer Front
               <input
                 required
                 type="text"
-                id="topic"
-                value={productFeature.drawerBox}
+                id="drawerFront"
+                value={productFeature.drawerFront}
                 onChange={handleChange}
                 placeholder="Write exactly"
               ></input>
             </label>
           </div>
           <div>
-            <label for="topic">
+            <label for="boxMaterial">
               Box Material
               <input
                 required
                 type="text"
-                id="topic"
+                id="boxMaterial"
                 value={productFeature.boxMaterial}
                 onChange={handleChange}
                 placeholder="Write exactly"
@@ -181,12 +181,12 @@ function ProductDetailExplanationComp() {
             </label>
           </div>
           <div>
-            <label for="topic">
+            <label for="shelves">
               Shelves
               <input
                 required
                 type="text"
-                id="topic"
+                id="shelves"
                 value={productFeature.shelves}
                 onChange={handleChange}
                 placeholder="Write exactly"
@@ -194,12 +194,12 @@ function ProductDetailExplanationComp() {
             </label>
           </div>
           <div>
-            <label for="topic">
+            <label for="drawerBox">
               Drawer Box
               <input
                 required
                 type="text"
-                id="topic"
+                id="drawerBox"
                 value={productFeature.drawerBox}
                 onChange={handleChange}
                 placeholder="Write exactly"
@@ -207,12 +207,12 @@ function ProductDetailExplanationComp() {
             </label>
           </div>
           <div>
-            <label for="topic">
+            <label for="drawerGlides">
               Drawer Glides
               <input
                 required
                 type="text"
-                id="topic"
+                id="drawerGlides"
                 value={productFeature.drawerGlides}
                 onChange={handleChange}
                 placeholder="Write exactly"
@@ -220,12 +220,12 @@ function ProductDetailExplanationComp() {
             </label>
           </div>
           <div>
-            <label for="topic">
+            <label for="hinges">
               Hinges
               <input
                 required
                 type="text"
-                id="topic"
+                id="hinges"
                 value={productFeature.hinges}
                 onChange={handleChange}
                 placeholder="Write exactly"
