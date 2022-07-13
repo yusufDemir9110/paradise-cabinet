@@ -108,36 +108,16 @@ function Main() {
       <article className="cabinetContainer" id="cabinetContainer">
         <h1>Cabinets</h1>
         <hr />
-        <div className="topicCont">
+        <div className="homeProductContainer">
           {products.map(({ id, data }) => (
-            <div
-              key={id}
-              className="topic"
-              style={{ backgroundImage: "url(" + data.image + ")" }}
-            >
-              <div className="topic_name">{data.name}</div>
-              <div className="topic_desc_bg">
-                <div>
-                  <div className="topic_desc" id="topic_desc_1">
-                    &gt; {data.description1}
-                  </div>
-                  <div className="topic_desc" id="topic_desc_2">
-                    &gt; {data.description2}
-                  </div>
-                  <div className="topic_desc" id="topic_desc_3">
-                    &gt; {data.description3}
-                  </div>
-                  <div className="topic_desc" id="topic_desc_4">
-                    &gt; {data.description4}
-                  </div>
-                </div>
-
-                <div className="topic_desc" id="topic_desc_5">
-                  <Link to={"/productDetail"} state={{ state: data.name }}>
-                    <button className="buttonTop">Lesson</button>
-                  </Link>
-                </div>
-              </div>
+            <div key={id} className="homeProductItemContainer">
+              <Link to={"/productDetail"} state={{ state: data.name }}>
+                <div
+                  className="homeProductItem"
+                  style={{ backgroundImage: "url(" + data.image + ")" }}
+                ></div>
+                <div className="homeProductName">{data.name}</div>
+              </Link>
             </div>
           ))}
         </div>

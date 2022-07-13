@@ -14,7 +14,7 @@ header{
    z-index: 10;
 }
 .headerLogo{
-    width:150px;
+    width:120px;
 }
 .headerTopRight{
    
@@ -54,7 +54,12 @@ header{
 }
 .whatsappLogo{
     width:80px;
- 
+    border-radius: 50%;
+    transition:all 0.2s ease;
+}
+.whatsappLogo:hover{
+    box-shadow: 5px 5px 3px 2px var(--color-buttonGrey);
+
 }
 
 nav ul {
