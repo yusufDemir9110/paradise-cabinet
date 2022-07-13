@@ -95,10 +95,14 @@ function Main() {
           <h1>About Us</h1>
           <hr />
           <p>
-            Paradise Cabinet is a subsidiary company of MFY Construction. Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Totam quaerat
-            quia quos minima deserunt amet accusamus, iure culpa id, maiores,
-            autem dicta laboriosam ipsam ex quo sed officiis exercitationem non!
+            Paradise cabinet is local cabinet supplier located in Paradise
+            California. We supply high quality assembled cabinets for your
+            kitchen and bathroom projects delivered to project location and also
+            offer installation service with&nbsp;
+            <a href="https://www.mfyconstruction.com/">
+              <em> Mfy Construction</em>
+            </a>
+            .
           </p>
         </div>
         <div className="bigLogo">
@@ -137,22 +141,15 @@ function Main() {
               className="faEllipsisVertical"
               icon={faEllipsisVertical}
             />
-            <h3>Contact</h3>
+            <div>
+              <h3>Contact</h3>
+              <p>Simply fill out the contact form, email or text us.</p>
+            </div>
           </div>
           <div className="aniItemLeft">
             <div className="aniItemIconContainer blue">
-              <FontAwesomeIcon className="aniItemIconBlue" icon={faPenRuler} />
-            </div>
-            <FontAwesomeIcon
-              className="faEllipsisVertical"
-              icon={faEllipsisVertical}
-            />
-            <h3>Design</h3>
-          </div>
-          <div className="aniItemRight">
-            <div className="aniItemIconContainer orange">
               <FontAwesomeIcon
-                className="aniItemIconOrange"
+                className="aniItemIconBlue"
                 icon={faCalendarDays}
               />
             </div>
@@ -160,7 +157,32 @@ function Main() {
               className="faEllipsisVertical"
               icon={faEllipsisVertical}
             />
-            <h3>Schedule</h3>
+            <div>
+              <h3>Schedule</h3>
+              <p>
+                We will schedule an appointment for taking measurements and
+                presents sample doors and hardware at your location.
+              </p>
+            </div>
+          </div>
+          <div className="aniItemRight">
+            <div className="aniItemIconContainer orange">
+              <FontAwesomeIcon
+                className="aniItemIconOrange"
+                icon={faPenRuler}
+              />
+            </div>
+            <FontAwesomeIcon
+              className="faEllipsisVertical"
+              icon={faEllipsisVertical}
+            />
+            <div>
+              <h3>Design</h3>
+              <p>
+                After completing 3D computer design we will double check the
+                measurements and style with you.
+              </p>
+            </div>
           </div>
           <div className="aniItemLeft">
             <div className="aniItemIconContainer">
@@ -170,7 +192,13 @@ function Main() {
               className="faEllipsisVertical"
               icon={faEllipsisVertical}
             />
-            <h3>Delivery</h3>
+            <div>
+              <h3>Delivery</h3>
+              <p>
+                Your cabinets can be delivered in 2 weeks depending on style and
+                cabinet availability.
+              </p>
+            </div>
           </div>
           <div className="aniItemRight">
             <div className="aniItemIconContainer blue">
@@ -196,7 +224,7 @@ function Main() {
               className="faEllipsisVertical"
               icon={faEllipsisVertical}
             />
-            <h3>Deployment</h3>
+            <h3>Enjoy</h3>
           </div>
         </div>
       </section>

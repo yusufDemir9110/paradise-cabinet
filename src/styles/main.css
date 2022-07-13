@@ -47,9 +47,8 @@ hr{
 }
 section{
     display: flex;
-    
-    margin:48px auto;
-    padding: 24px;
+    margin:3rem auto;
+    padding: 1.5rem;
     align-items: center;
     max-width: 1140px;
 }
@@ -58,6 +57,16 @@ section{
 }
 .about p{
     margin:2rem 0;
+    text-indent: 1rem;
+}
+.about a{
+    text-decoration: none;
+    color: var(--color-orange);
+    
+}
+.about a:hover {
+    text-decoration: underline;
+
 }
 .bigLogo{
     width:60%;
@@ -99,7 +108,7 @@ section{
     transition-duration: 1s;
     padding: 0 !important;
     overflow: hidden;
-    margin: 15px 0;
+    margin: 1.5rem 0;
 }
 
 
@@ -112,7 +121,7 @@ section{
 
 .homeProductName {
     position: absolute;
-    bottom: -10px;
+    bottom: 0;
     margin: 0 12%;
     width: 70%;
     text-align: center;
@@ -144,6 +153,10 @@ section{
 }
 .processAnimation h3{
     color:var(--color-textGrey);
+    text-decoration: underline;
+}
+.processAnimation p {
+    text-align: start;
 }
 
 .aniItemRight, .aniItemLeft{
@@ -247,6 +260,9 @@ margin-left: 10%;
 }
 
 @media (max-width:640px){
+    section{
+        padding: 1rem;
+    }
     .homeProductContainer {
             grid-template-columns: 90%;
         }

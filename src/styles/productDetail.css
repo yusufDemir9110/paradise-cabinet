@@ -1,7 +1,7 @@
 .productDetailSection{
     margin: 0 auto;
     padding: 0.5rem 1.5rem;
-    
+    position: relative;
 }
 
 .slideImageContainer{
@@ -9,10 +9,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
+    
+    height: 513px;
+   
 }
 .slideImageContainer img{
     width:60%;
+    
 }
 .slideImageContainer button{
     position: absolute;
@@ -20,18 +23,25 @@
     height: 50px;
     border-radius: 50%;
     border:none;
+    opacity: 0.5;
+}
+.slideImageContainer button:hover {
+    opacity: 0.9;
 }
 #prevButton{
     
-    left:20%;
+    left:21.5%;
    
 }
 #nextButton {
     
-    right: 20%;
+    right: 21.5%;
    
 }
-
+.chevron{
+  
+    height: 20px;
+}
 tbody th{
     text-align: start;
 }
@@ -50,27 +60,32 @@ th,td{
             width: 80%;
         }
                 #prevButton {
-                    position: absolute;
-                    left: 10%;
+                    
+                    left: 13.2%;
                 }
         
                 #nextButton {
-                    position: absolute;
-                    right: 10%;
+                    
+                    right: 13.2%;
                 }
 }
 @media (max-width:640px) {
+    .productDetailSection {
+            
+            padding: 0.5rem 1rem;
+            
+        }
 
     .slideImageContainer img {
         width: 100%;
     }
         #prevButton {
-            position: absolute;
-            left: 0;
+            
+            left: 24px;
         }
     
         #nextButton {
-            position: absolute;
-            right: 0;
+            
+            right: 24px;
         }
 }

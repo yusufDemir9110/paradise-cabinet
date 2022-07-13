@@ -5,12 +5,14 @@ import whatsappLogo from "../assets/whatsapp3.png";
 import styles from "../styles/header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-
+import { Link } from "react-router-dom";
 function Header() {
   return (
     <header className="spaceBetween">
       <div className="headerLeft">
-        <img className="headerLogo" src={paradiseLogo} alt="paradiseLogo" />
+        <Link to={"/"}>
+          <img className="headerLogo" src={paradiseLogo} alt="paradiseLogo" />
+        </Link>
       </div>
       <div className="headerRight">
         <div className="headerTopRight">
