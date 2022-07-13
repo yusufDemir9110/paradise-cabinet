@@ -116,7 +116,9 @@ function Main() {
                   className="homeProductItem"
                   style={{ backgroundImage: "url(" + data.image + ")" }}
                 ></div>
-                <div className="homeProductName">{data.name}</div>
+                <div className="homeProductName">
+                  <h1>{data.name}</h1>{" "}
+                </div>
               </Link>
             </div>
           ))}

@@ -2,9 +2,15 @@ import { collection, onSnapshot } from "firebase/firestore";
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import db from "../firebase/firebase";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 function ProductDetailImg() {
   const [images, setImages] = useState([]);
+
   const [current, setCurrent] = useState(0);
   const length = images.length;
   let imageName = useLocation();
@@ -18,7 +24,7 @@ function ProductDetailImg() {
 
   useEffect(() => {
     onSnapshot(
-      collection(db, "product-detail-images" + imageName.state.state),
+      collection(db, "product-detail-images-" + imageName.state.state),
       (snapshot) =>
         setImages(
           snapshot.docs.map((doc) => ({
@@ -27,29 +33,26 @@ function ProductDetailImg() {
           }))
         )
     );
-    console.log(imageName.state.state);
   }, []);
   return (
-    <div>
-      <div className="mainSlide">
-        {images.map(({ id, data }, index) => (
-          <div className={index === current ? "data active" : "data"} key={id}>
-            {index === current && (
-              <div className="slide">
-                <div className="dataImageLesson">
-                  <img src={data.image}></img>
-                </div>
+    <section className="productDetailSection">
+      {images.map(({ id, data }, index) => (
+        <div className={index === current ? "data active" : "data"} key={id}>
+          {index === current && (
+            <div className="slideImageContainer">
+              <img src={data.image}></img>
 
-                <div className="buttonCont">
-                  <button onClick={prevSlide}>Prev</button>
-                  <button onClick={nextSlide}>Next</button>
-                </div>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
+              <button id="prevButton" onClick={prevSlide}>
+                <FontAwesomeIcon className="chevron" icon={faChevronLeft} />
+              </button>
+              <button id="nextButton" onClick={nextSlide}>
+                <FontAwesomeIcon className="chevron" icon={faChevronRight} />
+              </button>
+            </div>
+          )}
+        </div>
+      ))}
+    </section>
   );
 }
 
