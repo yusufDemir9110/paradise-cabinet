@@ -133,6 +133,11 @@ function Contact() {
           </label>
         </div>
         <div className="uploadContainer">
+          <p id="explanation">
+            You can add an image to your message. Please first click "Choose
+            Image" and choose an image from your device, then click "Upload
+            Image"
+          </p>
           <label htmlFor="imageForm">
             <form id="imageForm" onSubmit={imageHandler}>
               <div className="doubleButton">

@@ -1,12 +1,12 @@
 import React from "react";
 import ProductDetailImg from "./ProductDetailImg";
 import ProductDetailExplanation from "./ProductDetailExplanation";
-import Header from "./Header";
+import HeaderSecond from "./HeaderSecond";
 import Footer from "./Footer";
 function ProductDetail() {
   return (
     <div>
-      <Header />
+      <HeaderSecond />
       <ProductDetailImg />
       <ProductDetailExplanation />
       <Footer />

@@ -22,7 +22,16 @@ function Footer() {
           </div>
         </div>
         <div className="footerBottom">
-          <p>Designed by Yusuf Demir and Fatih Sancaktar</p>
+          <p>
+            ©2022 Paradise Cabinet - This website has designed by&nbsp;
+            <a href="https://www.linkedin.com/in/yusuf-demir-91439719b/">
+              Yusuf Demir
+            </a>
+            &nbsp;and&nbsp;
+            <a href="https://www.linkedin.com/in/fatih-sancaktar-2524691b1/">
+              Fatih Sancaktar
+            </a>
+          </p>
         </div>
       </footer>
     </div>

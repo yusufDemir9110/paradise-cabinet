@@ -81,6 +81,10 @@ form button{
 .uploadContainer p{
     text-align: center;
 }
+#explanation {
+    text-align: start;
+    font-size: 0.8rem;
+}
 
 textarea{
     resize:none;
@@ -101,14 +105,19 @@ form{
 }
 
 
-.footerBottom{
-    display: flex;
-    justify-content: center;
-}
+
 .policy{
     font-size: 0.8rem;
     text-align: justify;
     
+}
+.footerBottom {
+    display: flex;
+    justify-content: center;
+    margin-top:1rem;
+}
+.footerBottom p{
+    font-size: 0.8rem;
 }
 
 @media (max-width:960px){

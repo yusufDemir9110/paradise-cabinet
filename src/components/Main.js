@@ -133,31 +133,40 @@ function Main() {
         <hr />
         <div className="processAnimation">
           <div className="aniItemRight">
-            <div className="aniItemIconContainer">
-              <FontAwesomeIcon className="aniItemIcon" icon={faAddressBook} />
+            <div className="icons">
+              <div className="aniItemIconContainer">
+                <FontAwesomeIcon className="aniItemIcon" icon={faAddressBook} />
+              </div>
+
+              <FontAwesomeIcon
+                className="faEllipsisVertical"
+                icon={faEllipsisVertical}
+              />
             </div>
 
-            <FontAwesomeIcon
-              className="faEllipsisVertical"
-              icon={faEllipsisVertical}
-            />
-            <div>
+            <div className="processAnimationText">
               <h3>Contact</h3>
-              <p>Simply fill out the contact form, email or text us.</p>
+              <p>
+                Simply fill out the contact form, email or text us. Our company
+                will answer you.
+              </p>
             </div>
           </div>
           <div className="aniItemLeft">
-            <div className="aniItemIconContainer blue">
+            <div className="reverse icons">
+              <div className="aniItemIconContainer blue">
+                <FontAwesomeIcon
+                  className="aniItemIconBlue"
+                  icon={faCalendarDays}
+                />
+              </div>
               <FontAwesomeIcon
-                className="aniItemIconBlue"
-                icon={faCalendarDays}
+                className="faEllipsisVertical"
+                icon={faEllipsisVertical}
               />
             </div>
-            <FontAwesomeIcon
-              className="faEllipsisVertical"
-              icon={faEllipsisVertical}
-            />
-            <div>
+
+            <div className="processAnimationText">
               <h3>Schedule</h3>
               <p>
                 We will schedule an appointment for taking measurements and
@@ -166,17 +175,20 @@ function Main() {
             </div>
           </div>
           <div className="aniItemRight">
-            <div className="aniItemIconContainer orange">
+            <div className="icons">
+              <div className="aniItemIconContainer orange">
+                <FontAwesomeIcon
+                  className="aniItemIconOrange"
+                  icon={faPenRuler}
+                />
+              </div>
               <FontAwesomeIcon
-                className="aniItemIconOrange"
-                icon={faPenRuler}
+                className="faEllipsisVertical"
+                icon={faEllipsisVertical}
               />
             </div>
-            <FontAwesomeIcon
-              className="faEllipsisVertical"
-              icon={faEllipsisVertical}
-            />
-            <div>
+
+            <div className="processAnimationText">
               <h3>Design</h3>
               <p>
                 After completing 3D computer design we will double check the
@@ -185,46 +197,67 @@ function Main() {
             </div>
           </div>
           <div className="aniItemLeft">
-            <div className="aniItemIconContainer">
-              <FontAwesomeIcon className="aniItemIcon" icon={faTruck} />
+            <div className="reverse icons">
+              <div className="aniItemIconContainer">
+                <FontAwesomeIcon className="aniItemIcon" icon={faTruck} />
+              </div>
+              <FontAwesomeIcon
+                className="faEllipsisVertical"
+                icon={faEllipsisVertical}
+              />
             </div>
-            <FontAwesomeIcon
-              className="faEllipsisVertical"
-              icon={faEllipsisVertical}
-            />
-            <div>
+
+            <div className="processAnimationText">
               <h3>Delivery</h3>
               <p>
-                Your cabinets can be delivered in 2 weeks depending on style and
-                cabinet availability.
+                Your cabinets will be delivered with care and attention within 2
+                weeks, depending on style and cabinet availability.
               </p>
             </div>
           </div>
           <div className="aniItemRight">
-            <div className="aniItemIconContainer blue">
+            <div className="icons">
+              <div className="aniItemIconContainer blue">
+                <FontAwesomeIcon
+                  className="aniItemIconBlue"
+                  icon={faPuzzlePiece}
+                />
+              </div>
               <FontAwesomeIcon
-                className="aniItemIconBlue"
-                icon={faPuzzlePiece}
+                className="faEllipsisVertical"
+                icon={faEllipsisVertical}
               />
             </div>
-            <FontAwesomeIcon
-              className="faEllipsisVertical"
-              icon={faEllipsisVertical}
-            />
-            <h3>Installation</h3>
+
+            <div className="processAnimationText">
+              <h3>Installation</h3>
+              <p>
+                Your cabinets will be carefully assembled by our professional
+                staff. Working clean is our rule.
+              </p>
+            </div>
           </div>
           <div className="aniItemLeft">
-            <div className="aniItemIconContainer orange">
+            <div className="reverse icons">
+              <div className="aniItemIconContainer orange">
+                <FontAwesomeIcon
+                  className="aniItemIconOrange"
+                  icon={faFlagCheckered}
+                />
+              </div>
               <FontAwesomeIcon
-                className="aniItemIconOrange"
-                icon={faFlagCheckered}
+                className="faEllipsisVertical"
+                icon={faEllipsisVertical}
               />
             </div>
-            <FontAwesomeIcon
-              className="faEllipsisVertical"
-              icon={faEllipsisVertical}
-            />
-            <h3>Enjoy</h3>
+
+            <div className="processAnimationText">
+              <h3>Enjoy</h3>
+              <p>
+                Congratulations! Now you have a new kitchen and your house has a
+                new soul. Enjoy with your family and friends!
+              </p>
+            </div>
           </div>
         </div>
       </section>
