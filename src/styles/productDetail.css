@@ -48,6 +48,10 @@ tbody th{
 th,td{
     padding: 0.5rem 1rem;
 }
+#productDetailName{
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--color-buttonGrey);
+}
 .productDetailExplanation{
     display: flex;
     justify-content: center;

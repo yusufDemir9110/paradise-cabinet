@@ -26,7 +26,9 @@ function ProductDetailExplanation() {
           <table>
             <thead>
               <tr>
-                <th colSpan={2}>Product Features</th>
+                <th id="productDetailName" colSpan={2}>
+                  {imageName.state.state}
+                </th>
               </tr>
             </thead>
             <tbody>

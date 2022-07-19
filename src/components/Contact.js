@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import db, { storage } from "../firebase/firebase";
 import "../styles/admin.css";
 import { Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
+import * as ids from "../email/Emailkey";
 
 function Contact() {
   const [message, setMessage] = useState({
@@ -17,6 +19,7 @@ function Contact() {
   const [disabled, setDisabled] = useState(true);
   const [progres, setProgres] = useState(0);
   const [imageUrl, setImageUrl] = useState("");
+  const form = useRef();
 
   function handleChange(e) {
     message[e.target.id] = e.target.value;
@@ -64,6 +67,7 @@ function Contact() {
       messageText: message.messageText,
       image: imageUrl,
     });
+
     setMessage({
       name: "",
       phone: "",
@@ -75,6 +79,18 @@ function Contact() {
     setImageUrl("");
     setDisabled(true);
     setProgres(0);
+    await emailjs
+      .sendForm(ids.SERVICE_ID, ids.TEMPLATE_ID, form.current, ids.USER_ID)
+      .then(
+        () => {
+          alert(
+            "Thank you! Your message has been sent! We will contact you in short time!"
+          );
+        },
+        (error) => {
+          alert(error.text);
+        }
+      );
   };
 
   return (
@@ -134,7 +150,7 @@ function Contact() {
         </div>
         <div className="uploadContainer">
           <p id="explanation">
-            You can add an image to your message. Please first click "Choose
+            You can add an image to your message. Please, firstly click "Choose
             Image" and choose an image from your device, then click "Upload
             Image"
           </p>
@@ -149,7 +165,11 @@ function Contact() {
               </button>
             </form>
           </label>
-          {progres === 0 ? <p></p> : <p>Uploaded {progres} %</p>}
+          {progres === 0 ? (
+            <p id="uploadImagePercentTrans">Image Uploaded {progres} %</p>
+          ) : (
+            <p id="uploadImagePercent">Image Uploaded {progres} %</p>
+          )}
 
           <label htmlFor="image">
             <input
@@ -169,9 +189,21 @@ function Contact() {
         my data in line therewith.
       </div>
       <div className="sendButton">
-        <button disabled={disabled} onClick={add}>
-          Send Message
-        </button>
+        <form ref={form}>
+          <div className="formDisplayNone">
+            <label>Name</label>
+            <input type="text" name="user_name" value={message.name} />
+            <label>Phone Number</label>
+            <input type="text" name="user_phone" value={message.phone} />
+            <label>Email</label>
+            <input type="email" name="user_email" value={message.email} />
+            <label>Message</label>
+            <textarea name="message" value={message.messageText} />
+          </div>
+          <button type="submit" disabled={disabled} onClick={add}>
+            Send Message
+          </button>
+        </form>
       </div>
     </div>
   );
