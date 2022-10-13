@@ -7,6 +7,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import styles from "../styles/productDetail.css";
 
 function ProductDetailImg() {
   const [images, setImages] = useState([]);

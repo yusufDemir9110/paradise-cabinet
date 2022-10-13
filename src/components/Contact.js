@@ -6,6 +6,7 @@ import "../styles/admin.css";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import * as ids from "../email/Emailkey";
+import styles from "../styles/footer.css";
 
 function Contact() {
   const [message, setMessage] = useState({
@@ -39,7 +40,7 @@ function Contact() {
   };
 
   const uploadImages = (image) => {
-    const storageRefLes = ref(storage, `/photos/${image.name}`);
+    const storageRefLes = ref(storage, `/messagePhotos/${image.name}`);
     const uploadTask = uploadBytesResumable(storageRefLes, image);
     uploadTask.on(
       "state_changed",
@@ -95,7 +96,9 @@ function Contact() {
 
   return (
     <div className="formContainer" id="formContainer">
-      <h1>Contact Us</h1>
+      <h1>
+        <strong>Contact Us</strong>
+      </h1>
       <hr />
       <div className="formItems">
         <div>

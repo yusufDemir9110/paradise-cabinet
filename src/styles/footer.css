@@ -1,6 +1,5 @@
-footer{
-    
-    padding: 48px 24px 6px 24px;
+footer{    
+    padding: 3rem 1.5rem 0.5rem 1.5rem;
     background-color: var(--color-backgroundGrey);
 }
 .footerTop{
@@ -9,8 +8,6 @@ footer{
     align-items: center;
 }
 .formContainer{
-    
-
     color:var(--color-textGrey);
     width:35%;
 }
@@ -30,20 +27,16 @@ footer{
 }
 .formContainer h1 {
     margin:1.5rem auto;
+   
 }
-
 .formItems{
     margin:3rem 0 auto 0;
 }
-
 .formItems div:not(.doubleButton){
     margin: 2rem 0;
-    font-size:1.3rem;
- 
-    
+    font-size:1.3rem;   
 }
 .formItems input:not(input[type=file]), textarea, #imageForm{
-
     border: none;
     border-bottom: 2px solid var(--color-lineGrey);
     height:1.5rem;   
@@ -53,14 +46,11 @@ footer{
     padding:3px;
     width:100%;
 }
-
 #imageForm{
     border:none;
 }
-
 #unvisibleButton{
-    opacity:0;
-    
+    opacity:0;   
     position: absolute;
     z-index: 1;
     width:120px;
@@ -72,9 +62,7 @@ form button{
 #chooseImage{
     width: 120px;
 }
-
-#uploadImage{
-    
+#uploadImage{  
     width: 120px;
 }
 #uploadImagePercentTrans{
@@ -85,7 +73,6 @@ form button{
     font-size: 1rem;
     opacity: 1;
 }
-
 .uploadContainer p{
     text-align: center;
 }
@@ -93,35 +80,32 @@ form button{
     text-align: start;
     font-size: 0.8rem;
 }
-
 textarea{
     resize:none;
+    font-family: Helvetica, Arial, sans-serif;
 }
-
-
 .formItems input::placeholder{
-   font-size: 1.3rem;
-    
+   font-size: 1.3rem;   
 }
 .formItems input[type=url] {
-    display: none;
-    
+    display: none;   
 }
 form{
     display: flex;
     justify-content: space-evenly;
 }
-
 .map h3,h4{
     margin:1rem;
     color:var(--color-textGrey);
     font-weight: 500;
 }
-
+.map h4 a{
+    text-decoration: none;
+    color: var(--color-textGrey);
+}
 .policy{
     font-size: 0.8rem;
-    text-align: justify;
-    
+    text-align: justify;   
 }
 .formDisplayNone{
     display: none;
@@ -133,26 +117,27 @@ form{
 }
 .footerBottom p{
     font-size: 0.8rem;
+    text-align: center;
+    margin:auto 3rem;
+}
+.footerBottom p a{
+    color:var(--color-textGrey)
 }
 
 @media (max-width:960px){
     .footerTop{
         flex-direction: column;
     }
-        .map {
-            margin-top: 3rem;
-        }
-                .formContainer {
-        
-        
-                    width: 450px;
-                }
-}
-@media (max-width:600px) {
-   
+    .map {
+        margin-top: 3rem;
+    }
     .formContainer {
+        width: 450px;
+    }
+}
 
-
+@media (max-width:600px) {  
+    .formContainer {
         width: 100%;
     }
     .map{

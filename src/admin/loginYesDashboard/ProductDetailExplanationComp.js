@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { setDoc, doc } from "firebase/firestore";
-import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import db, { storage } from "../../firebase/firebase";
+import db from "../../firebase/firebase";
 
 function ProductDetailExplanationComp() {
   const [productFeature, setProductFeature] = useState({

@@ -4,4 +4,26 @@
     align-items: center;
     margin: 30px;
 }
+.receivedMessages{
+    margin:1rem;
+}
+.receivedMessagesCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:1px solid black;
+}
+.receivedMessagesCard div{
+    margin: 0.3rem;
+}
+.receivedMessagesCard img{
+    width: 100%;
+}
 
+@media (max-width:640px){
+.receivedMessagesCard {
+    width: 100%;
+    margin: 1rem 0;
+}
+}

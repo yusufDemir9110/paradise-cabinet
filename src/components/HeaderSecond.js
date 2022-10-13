@@ -1,7 +1,6 @@
 import React from "react";
-import logo from "../assets/logo.png";
 import paradiseLogo from "../assets/paradiseLogo.png";
-import whatsappLogo from "../assets/whatsapp3.png";
+import whatsappLogo from "../assets/whatsapp.png";
 import styles from "../styles/header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -27,14 +26,6 @@ function HeaderSecond() {
             <img className="whatsappLogo" src={whatsappLogo} alt="" />
           </a>
         </div>
-
-        <nav>
-          <ul>
-            <li>
-              <a href="#formContainer"> Contact Us</a>
-            </li>
-          </ul>
-        </nav>
       </div>
     </header>
   );

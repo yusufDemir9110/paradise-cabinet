@@ -1,14 +1,7 @@
-import {
-  collection,
-  onSnapshot,
-  addDoc,
-  setDoc,
-  doc,
-} from "firebase/firestore";
+import { collection, onSnapshot } from "firebase/firestore";
 import React, { useState, useEffect } from "react";
-import db, { storage } from "../../firebase/firebase";
+import db from "../../firebase/firebase";
 import "../../styles/admin.css";
-import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import SliderComp from "./SliderComp";
 import ProductComp from "./ProductComp";
 import ProductDetailComp from "./ProductDetailComp";
@@ -27,12 +20,27 @@ function Dashboard() {
   }, []);
   return (
     <div>
-      <div>
+      <div className="receivedMessages">
         {messages.map(({ id, data }) => (
-          <div key={id}>
-            <div>{data.name}</div>
-            <div>{data.phone}</div>
-            <div>{data.email}</div>
+          <div className="receivedMessagesCard" key={id}>
+            <div>
+              <span>
+                <strong>Full Name:</strong>&nbsp;
+              </span>
+              {data.name}
+            </div>
+            <div>
+              <span>
+                <strong>Phone Number:</strong>&nbsp;
+              </span>
+              {data.phone}
+            </div>
+            <div>
+              <span>
+                <strong>E-mail:</strong>&nbsp;
+              </span>
+              {data.email}
+            </div>
             <div>{data.messageText}</div>
             <div>
               <img src={data.image} />

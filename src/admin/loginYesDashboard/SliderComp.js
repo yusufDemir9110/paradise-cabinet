@@ -1,17 +1,12 @@
-import {
-  collection,
-  onSnapshot,
-  addDoc,
-  setDoc,
-  doc,
-} from "firebase/firestore";
-import React, { useState, useEffect } from "react";
+import { collection, addDoc } from "firebase/firestore";
+import React, { useState } from "react";
 import db, { storage } from "../../firebase/firebase";
 import "../../styles/admin.css";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
 function SliderComp() {
   const [slideItem, setSlideItem] = useState({
+    name: "",
     altText: "",
     image: "",
   });
@@ -59,11 +54,13 @@ function SliderComp() {
     event.preventDefault();
 
     await addDoc(collection(db, "slides-data"), {
+      name: slideItem.name,
       altText: slideItem.altText,
       image: imageUrl,
     });
 
     setSlideItem({
+      name: "",
       altText: "",
       image: "",
     });
@@ -84,6 +81,17 @@ function SliderComp() {
           </form>
           <h2>Uploaded {progres} %</h2>
         </div>
+        <label for="name">
+          Product Name
+          <input
+            required
+            type="text"
+            id="name"
+            value={slideItem.name}
+            onChange={handleChange}
+            placeholder="Product Name"
+          ></input>
+        </label>
         <input
           required
           type="text"

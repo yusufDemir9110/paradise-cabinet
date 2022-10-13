@@ -1,39 +1,29 @@
 article{
-    background-color: var(--color-backgroundGrey);
-    
+    background-color: var(--color-backgroundGrey);   
 }
-
 h1{
     text-align: center;
     font-weight: 500;
 }
-
 hr{
     width:60%;
 }
-
 .slideImages{
     width:100%;
 }
 .slick-track{
     height:400px;
 }
-
 .slick-arrow{
     display: none !important;
 }
-
 .slick-slide{
     display: flex !important;
-    align-items: center !important;
-    
+    align-items: center !important;    
 }
-
 .slick-slide div{
     display: flex;
-    justify-content: center;
-    
-    
+    justify-content: center;   
 }
 .slick-slide div div{
     width: 85% !important;
@@ -60,24 +50,17 @@ section{
     text-indent: 1rem;
 }
 .about a{
-    text-decoration: none;
-    color: var(--color-orange);
-    
+    color: var(--color-orange);    
 }
-.about a:hover {
-    text-decoration: underline;
 
-}
 .bigLogo{
     width:60%;
     display: flex;
     justify-content: flex-end;
 }
-
 .bigLogo img{
     width:80%;
 }
-
 .cabinetContainer{
     padding:1rem 0;
 }
@@ -88,17 +71,13 @@ section{
     justify-content: space-around;
 }
 .homeProductItemContainer{
-    position: relative;
-    
+    position: relative;    
 }
 .homeProductItemContainer:hover .homeProductName{
     color:var(--color-darkBlue);
     border-color: var(--color-darkBlue);
-
 }
-
-.homeProductItem {
-    
+.homeProductItem {   
     height: 300px;
     width: 100%;
     background-position: center;
@@ -110,15 +89,11 @@ section{
     overflow: hidden;
     margin: 3rem 0;
 }
-
-
-
 .homeProductItem:hover {
     background-position: center;
     background-size: 150%;
     transition-duration: 1s ease;
 }
-
 .homeProductName {
     position: absolute;
     bottom: 7%;
@@ -129,29 +104,20 @@ section{
     color:var(--color-textGrey);
     padding: 0.5rem 3%;
     border: 2px solid var(--color-lineGrey);
-    border-radius: 1rem;
-    
+    border-radius: 1rem;   
 }
 .homeProductName h1{
     margin:0;
     font-size: 1.35rem;
 }
-
-
-
-
 .processContainer{
     flex-direction: column;
-    align-items: stretch;
-    
+    align-items: stretch;    
 }
-
 .processAnimation{
-    display:flex;
-    
+    display:flex;    
     margin-top: 2rem;
-    margin-bottom:2rem;
-    
+    margin-bottom:2rem;    
 }
 .aniItemRight,
 .aniItemLeft {
@@ -164,7 +130,6 @@ section{
     text-align: center;
     position: relative;
 }
-
 .aniItemLeft {
     flex-direction: column-reverse;
 }
@@ -175,8 +140,7 @@ section{
 .processAnimation h3{
     color:var(--color-textGrey);
     text-decoration: underline;
-    position: absolute;
-   
+    position: absolute;  
     transition: all 0.5s ease;
 }
 .aniItemRight h3{
@@ -197,7 +161,6 @@ section{
     display: flex;
     justify-content: center;
 }
-
 .processAnimation p {
     text-align: center;
     opacity: 0;
@@ -220,20 +183,15 @@ section{
     top: 0;
     transform: scale(1.1);
 }
-
 .aniItemLeft:hover .processAnimationText>p {
     opacity: 1;
 }
-
 .aniItemLeft:hover .faEllipsisVertical {
     opacity: 0;
 }
-
 .aniItemLeft:hover .aniItemIconContainer {
     transform: scale(1.1);
 }
-
-
 .aniItemIconContainer{
     height: 85px;
     width: 85px;
@@ -245,13 +203,11 @@ section{
     transition:all 0.5s ease;
 }
 .blue{
-    border-color:var(--color-blue);
-   
+    border-color:var(--color-blue);   
 }
 .orange {
     border-color: var(--color-orange)
 }
-
 .aniItemIcon{
     height: 50px;
     color: var(--color-green);   
@@ -272,18 +228,15 @@ section{
     transition:all 0.5s ease;
 }
 
-@media (max-width:1200px){
-    
+@media (max-width:1200px){   
     .homeProductContainer {
         grid-template-columns: 45% 45%;
     }
     .section{
         width: 100%;
-    }
-        
+    }       
 }
 @media (max-width:960px) {
-
     .processAnimation {
         flex-direction: column;
         align-items: center;
@@ -291,8 +244,7 @@ section{
     .aniItemRight, .aniItemLeft{
         flex-direction: row;
         width:70%;
-        margin:1rem auto;
-        align-items: flex-end;
+        margin:1rem auto;       
     }
     .aniItemLeft{
         flex-direction: row-reverse;
@@ -305,150 +257,81 @@ section{
     .reverse {
         flex-direction: row-reverse;
     }
-    .aniItemRight h3 {
-        top: 40%;
-    }   
-    .aniItemLeft h3 {
-        top: 40%;
+    .processAnimationText{
+        flex-direction: column;            
     }
-    .aniItemRight:hover .processAnimationText>h3 {
-        top: 0;
+    .aniItemRight .processAnimationText>h3 {
+        position: relative;
+        margin-bottom: 0.5rem;
     }
-    .aniItemLeft:hover .processAnimationText>h3 {
-        top: 0;
+    .aniItemLeft .processAnimationText>h3 {
+        position: relative;
+        margin-bottom: 0.5rem;
+    }    
+    .aniItemRight .processAnimationText>p {
+        opacity: 1;
+         margin:auto 1rem;
     }
-    .processAnimationText p{
-        margin: 0;
+    .aniItemRight .faEllipsisVertical {
+        display: none;
     }
-        .aniItemRight h3 {
-    
-            margin-left: -15rem;
-    
-        }
-    
-        .aniItemRight:hover h3 {
-    
-            margin-left: 1rem;
-    
-        }
-    
-        .aniItemLeft h3 {
-    
-            margin-right: -15rem;
-    
-        }
-    
-        .aniItemLeft:hover h3 {
-    
-            margin-right: 1rem;
-    
-        }
-    
-.faEllipsisVertical {
-    
-    transform: rotate(90deg) scaleX(0.3); 
-    padding:0 1rem;
-}
-.sliderOne{
-    display: none;
-}
-.sliderTwo{
-    display: block;
-}
-.aboutContainer{
-    flex-direction: column;
-}
-.bigLogo {
-    justify-content: center;
-
+    .aniItemLeft .processAnimationText>p {
+        opacity: 1;
+        margin: auto 1rem;
+    }
+    .aniItemLeft .faEllipsisVertical {
+        display: none;
+    }
+    .faEllipsisVertical {
+        transform: rotate(90deg) scaleX(0.3); 
+        padding:0 1rem;
+    }
+    .sliderOne{
+        display: none;
+    }
+    .sliderTwo{
+        display: block;
+    }
+    .aboutContainer{
+        flex-direction: column;
+    }
+    .bigLogo {
+        justify-content: center;
+    }
 }
 
-}
-@media (max-width:760px) {
-    
 
-    .aniItemRight h3 {
-
-        margin-left: -10rem;
-
-    }
-
-    .aniItemRight:hover h3 {
-
-        margin-left: 1rem;
-
-    }
-
-    .aniItemLeft h3 {
-
-        margin-right: -10rem;
-
-    }
-
-    .aniItemLeft:hover h3 {
-
-        margin-right: 1rem;
-
-    }
-
-    
-}
 
 @media (max-width:640px){
     section{
         padding: 1rem;
     }
-        .aniItemRight,
-        .aniItemLeft {
-           
-            width: 100%;
-          
-        }
-                .aniItemRight h3 {
-        
-                    margin-left: -5rem;
-        
-                }
-        
-                .aniItemRight:hover h3 {
-        
-                    margin-left: 1rem;
-        
-                }
-        
-                .aniItemLeft h3 {
-        
-                    margin-right: -5rem;
-        
-                }
-        
-                .aniItemLeft:hover h3 {
-        
-                    margin-right: 1rem;
-        
-                }
-                
-                                .aniItemIconContainer {
-                                    transform: scale(0.8);
-                                }
-                                                                
-                .processAnimationText p {
-                    font-size: 0.85rem;
-                    
-                }
-                
+    .aniItemRight,
+    .aniItemLeft {       
+        width: 100%;
+    }   
+    .aniItemIconContainer {
+        transform: scale(0.8);
+    }         
+    .aniItemRight:hover .aniItemIconContainer {
+        transform: scale(0.9);
+    }
+    .aniItemLeft:hover .aniItemIconContainer {
+        transform: scale(0.9);
+    }   
+    .processAnimationText p {
+        font-size: 0.85rem;
+    }
     .homeProductContainer {
-            grid-template-columns: 90%;
-        }
-        .homeProductItem{
-            margin:1.5rem auto;
-        }
-        .homeProductName{
-            bottom: 0;
-        }
-        .bigLogo{
-            width: 100%;
-            
-        }
-                
+        grid-template-columns: 90%;
+    }
+    .homeProductItem{
+        margin:1.5rem auto;
+    }
+    .homeProductName{
+        bottom: 0;
+    }
+    .bigLogo{
+        width: 100%;        
+    }               
 }

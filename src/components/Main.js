@@ -25,9 +25,11 @@ function Main() {
     slidesToShow: 3,
     Infinite: true,
     dots: true,
-    speed: 500,
+    speed: 1000,
     initialSlide: 2,
     previousBtn: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
   };
   const settings2 = {
     className: "center",
@@ -35,9 +37,11 @@ function Main() {
     slidesToShow: 1,
     Infinite: true,
     dots: true,
-    speed: 500,
+    speed: 1000,
     initialSlide: 2,
     previousBtn: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
   };
   const [slides, setSlides] = useState([]);
   const [products, setProducts] = useState([]);
@@ -67,11 +71,13 @@ function Main() {
           <Slider {...settings}>
             {slides.map(({ data, id }) => (
               <div key={id}>
-                <img
-                  className="slideImages"
-                  src={data.image}
-                  alt={data.altText}
-                />
+                <Link to={"/productDetail"} state={{ state: data.name }}>
+                  <img
+                    className="slideImages"
+                    src={data.image}
+                    alt={data.altText}
+                  />
+                </Link>
               </div>
             ))}
           </Slider>
@@ -80,11 +86,13 @@ function Main() {
           <Slider {...settings2}>
             {slides.map(({ data, id }) => (
               <div key={id}>
-                <img
-                  className="slideImages"
-                  src={data.image}
-                  alt={data.altText}
-                />
+                <Link to={"/productDetail"} state={{ state: data.name }}>
+                  <img
+                    className="slideImages"
+                    src={data.image}
+                    alt={data.altText}
+                  />
+                </Link>
               </div>
             ))}
           </Slider>
@@ -99,7 +107,7 @@ function Main() {
             California. We supply high quality assembled cabinets for your
             kitchen and bathroom projects delivered to project location and also
             offer installation service with&nbsp;
-            <a href="https://www.mfyconstruction.com/">
+            <a href="https://www.mfyconstruction.com/" target="_blank">
               <em> Mfy Construction</em>
             </a>
             .
