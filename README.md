@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# About
+This website has designed for Paradise Cabinet Company, which is located in California, USA.
+React and Google Firebase technologies is used for this website.
+Click [here](https://www.paradisecabinet.com/) to visit website.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
